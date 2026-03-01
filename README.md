@@ -1,108 +1,168 @@
-🔐 Keylogger Project (Educational Purpose Only)
-📌 Project Overview
+🖱️⌨️ Keyboard & Mouse Event Listener (Python)
 
-This project demonstrates how keyboard input events can be captured using Python for educational and cybersecurity awareness purposes only. The goal of this project is to understand:
+   A real-time Keyboard and Mouse Event Monitoring Tool built using Python and the pynput library.
+   This project demonstrates how to:
 
-How keyboard event listeners work
+    Capture keyboard key presses
+    Detect special keys (Shift, Ctrl, Esc, etc.)
+    Track mouse movement
+    Detect mouse clicks
+    Monitor mouse scrolling
+    Run keyboard and mouse listeners simultaneously
 
-How input monitoring can be misused by attackers
+⚠️ This project is for educational and ethical learning purposes only.
 
-Why endpoint security and user awareness are important
 
-⚠ Disclaimer: This project is strictly for ethical learning, cybersecurity research, and controlled lab environments. Do NOT use this code on any system without explicit permission.
+📌 Features
+⌨️ Keyboard Monitoring
 
-🎯 Objectives
+    Detects normal key presses
+    Detects special keys (Shift, Ctrl, Esc, etc.)
+    Stops program when ESC key is pressed
+    Real-time console output
 
-Understand how keystroke logging works technically
 
-Learn about event-driven programming in Python
+🖱️ Mouse Monitoring
 
-Explore how attackers capture sensitive data
+    Tracks mouse movement (x, y coordinates)
+    Detects mouse clicks (button and position)
+    Detects mouse scroll events
+    Runs simultaneously with keyboard listener
+    
 
-Study defensive mechanisms against keylogging attacks
+⚡ Multi-Listener Execution
 
-🛠 Technologies Used
+    Keyboard and mouse listeners run together
+    Uses background threads
+    Clean program exit handling
+    
 
-Python 3.x
+🛠️ Technologies Used
 
-Pynput library (for keyboard event listening)
+    Python 3.x
+    pynput library
+    pynput.keyboard
+    pynput.mouse
 
-Basic file handling
 
-⚙️ How It Works (High-Level Explanation)
+📦 Installation
+Step 1: Clone the Repository
+git clone https://github.com/Haackerspot/key_logger.project/
+cd keyboard-mouse-listener
 
-The program:
+Step 2: Install Required Library
+pip install pynput
 
-Listens for keyboard input events.
+🚀 How to Run
+python keyboard_mouse_listener.py
 
-Captures each key pressed.
 
-Processes special keys (space, enter, etc.).
+🖥️ How It Works
+1️⃣ Keyboard Events
+  🔹 on_press(key)
+  🔹 Triggered whenever a key is pressed
+  🔹 prints:
+       🔹Normal keys (a, b, 1, etc.)
+       🔹Special keys (Shift, Ctrl, etc.)
 
-Stores the output into a local log file.
+   🔹 on_release(key)
+   🔹 Triggered when key is released
+   🔹 Stops the program when:
+       ESC key is pressed
 
-This demonstrates how easily user input can be recorded if proper system protections are not in place.
+       
+2️⃣ Mouse Events
+🔹 on_move(x, y)
+🔹Prints mouse cursor position
 
-🛡 Cybersecurity Learning Outcomes
+🔹 on_click(x, y, button, pressed)
+🔹Detects mouse button clicks
+🔹Shows:
+    🔹Position
+    🔹Button used
 
-After completing this project, you should understand:
+🔹 on_scroll(x, y, dx, dy)
+🔹Detects scroll wheel movement
 
-Why antivirus software detects keyloggers as spyware
 
-How attackers steal credentials
+🧠 Program Flow
 
-The importance of multi-factor authentication (MFA)
+1.Define keyboard event functions
+2.Define mouse event functions
+3.Create keyboard listener
+4.Create mouse listener
+5.Start both listeners
+6.Wait for ESC key to terminate
 
-How endpoint detection and response (EDR) tools identify suspicious behavior
 
-Why running unknown scripts is dangerous
+📁 Project Structure
+keyboard-mouse-listener/
+│
+├── keyboard_mouse_listener.py
+└── README.md
 
-🚫 Ethical Guidelines
 
-Only run this project on your own machine.
+⚠️ Important Notes
 
-Never deploy on someone else's device without written permission.
+🔹The program runs until ESC is pressed.
+🔹It prints all activity to the console.
+🔹Some operating systems may require:
+🔹Administrator privileges (Windows)
+🔹Accessibility permissions (Mac/Linux)
 
-Do not use for spying, monitoring, or illegal purposes.
+🔐 Ethical Usage Warning
 
-Follow responsible disclosure principles.
+This project captures keyboard and mouse activity.
 
-🔎 Detection & Prevention Awareness
+✔ Use it for:
 
-This project helps demonstrate why the following are important:
+🔹Learning event handling
+🔹Automation testing
+🔹Accessibility tools
+🔹Input monitoring experiments
 
-Updated antivirus software
+❌ Do NOT use it for:
 
-Strong password policies
+🔹Unauthorized monitoring
+🔹Spying on others
+🔹Malicious activity
+🔹Always obtain proper permission before running monitoring tools on any system.
 
-Two-factor authentication
 
-Regular system monitoring
+💡 Possible Enhancements
 
-Avoiding untrusted downloads
+🔹Save logs to a file instead of console
+🔹Add timestamp to each event
+🔹Create GUI version
+🔹Add start/stop toggle
+🔹Convert into background service
+🔹Add event filtering
 
-📚 Future Improvements (For Learning)
 
-Add logging timestamps
+📚 Learning Outcomes
 
-Implement encryption for stored logs (to understand secure storage concepts)
+🔹This project helps you understand:
+🔹Event-driven programming
+🔹Multithreading in Python
+🔹System-level input monitoring
+🔹Keyboard and mouse hooks
+🔹Listener lifecycle management
 
-Study how security tools detect such behavior
 
-Compare user-mode vs kernel-mode monitoring concepts
 
-🧠 Educational Value
+🤝 Contributing
 
-This project is useful for:
-
-Cybersecurity students
-
-Ethical hacking beginners
-
-Understanding malware behavior
-
-Academic demonstrations
+🔹Contributions are welcome!
+🔹Fork the repository
+🔹Create a new branch
+🔹Commit changes
+🔹Open a Pull Request
 
 📜 License
 
-This project is intended for educational use only. The developer is not responsible for misuse or illegal deployment.
+This project is intended for educational purposes.
+You may add an MIT License if publishing publicly.
+
+👨‍💻 Developer
+
+Built with Python for learning system-level event handling.
